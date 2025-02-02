@@ -38,6 +38,11 @@ def main():
             if player.collides_with(asteroid):
                 print("Game over!")
                 sys.exit()
+            else:
+                for shot in shots:
+                    if shot.collides_with(asteroid):
+                        asteroid.split()
+                        shot.kill()
         
         pygame.Surface.fill(screen, (0, 0, 0))
         
